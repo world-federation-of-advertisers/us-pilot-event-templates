@@ -20,7 +20,7 @@ load("//build/wfa:repositories.bzl", "wfa_repo_archive")
 
 def wfa_measurement_system_repositories():
     """Imports all direct dependencies for wfa_measurement_system."""
-    
+
     wfa_repo_archive(
         name = "wfa_measurement_proto",
         repo = "cross-media-measurement-api",
