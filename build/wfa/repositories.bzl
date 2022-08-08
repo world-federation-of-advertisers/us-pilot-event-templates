@@ -1,4 +1,4 @@
-# Copyright 2022 The Cross-Media Measurement Authors
+# Copyright 2021 The Cross-Media Measurement Authors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ _PREFIX_TEMPLATE = "{repo}-{suffix}"
 
 def wfa_repo_archive(name, repo, sha256, version = None, commit = None):
     """Adds a WFA repository archive target.
-    
+
     Args:
       name: target name
       repo: name of repository in world-federation-of-advertisers organization
