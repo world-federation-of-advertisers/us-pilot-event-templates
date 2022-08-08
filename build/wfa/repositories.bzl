@@ -22,6 +22,7 @@ _PREFIX_TEMPLATE = "{repo}-{suffix}"
 
 def wfa_repo_archive(name, repo, sha256, version = None, commit = None):
     """Adds a WFA repository archive target.
+    
     Args:
       name: target name
       repo: name of repository in world-federation-of-advertisers organization
