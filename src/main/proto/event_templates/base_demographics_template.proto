@@ -16,7 +16,7 @@ syntax = "proto3";
 
 package event_templates;
 
-import "event_templates/event_annotations.proto";
+import "wfa/measurement/api/v2alpha/event_annotations.proto";
 
 option java_package = "event_templates";
 option java_multiple_files = true;
