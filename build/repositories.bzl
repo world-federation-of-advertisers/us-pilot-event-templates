@@ -20,7 +20,7 @@ load("//build/wfa:repositories.bzl", "wfa_repo_archive")
 
 def us_pilot_event_templates_repositories():
     """Imports all direct dependencies for us_pilot_event_templates."""
-    
+
     wfa_repo_archive(
         name = "wfa_common_jvm",
         repo = "common-jvm",
