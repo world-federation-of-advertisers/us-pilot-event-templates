@@ -18,7 +18,7 @@ Adds external repos necessary for us_pilot_event_templates.
 
 load("//build/wfa:repositories.bzl", "wfa_repo_archive")
 
-def wfa_measurement_system_repositories():
+def us_pilot_event_templates_repositories():
     """Imports all direct dependencies for us_pilot_event_templates."""
 
     wfa_repo_archive(
