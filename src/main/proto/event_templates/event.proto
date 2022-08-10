@@ -22,5 +22,5 @@ option java_package = "event_templates";
 option java_multiple_files = true;
 
 message Event {
-  optional BaseDemographicsTemplate base_demographics = 1;
+  BaseDemographicsTemplate base_demographics = 1;
 }
