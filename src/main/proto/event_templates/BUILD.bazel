@@ -1,5 +1,4 @@
 load("@rules_proto//proto:defs.bzl", "proto_library")
-load("@rules_java//java:defs.bzl", "java_proto_library")
 
 package(
     default_testonly = True,
@@ -19,19 +18,9 @@ proto_library(
     ],
 )
 
-java_proto_library(
-    name = "event_templates_java_proto",
-    deps = [":event_templates_proto"],
-)
-
 proto_library(
     name = "event_proto",
     srcs = ["event.proto"],
     strip_import_prefix = IMPORT_PREFIX,
     deps = [":event_templates_proto"],
-)
-
-java_proto_library(
-    name = "event_java_proto",
-    deps = [":event_proto"],
 )

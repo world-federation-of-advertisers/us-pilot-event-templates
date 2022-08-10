@@ -22,13 +22,6 @@ def us_pilot_event_templates_repositories():
     """Imports all direct dependencies for us_pilot_event_templates."""
 
     wfa_repo_archive(
-        name = "wfa_common_jvm",
-        repo = "common-jvm",
-        sha256 = "9a3ae36a748578956052fd72d34c47ef7d158dee9a56ca01b3901f459b2985fa",
-        version = "0.41.1",
-    )
-
-    wfa_repo_archive(
         name = "wfa_measurement_proto",
         repo = "cross-media-measurement-api",
         sha256 = "69ee69cbfa11ba90ca172d3141a9465a4408883e1aa559d56ef740bd01d474ff",
