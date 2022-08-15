@@ -1,4 +1,4 @@
-// Copyright 2022 The Cross-Media Measurement Authors
+// Copyright 2021 The Cross-Media Measurement Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,16 +16,28 @@ syntax = "proto3";
 
 package event_templates;
 
-import "event_templates/base_demographics_template.proto";
-import "event_templates/platform_template.proto";
-import "event_templates/geo_template.proto";
-
+import "wfa/measurement/api/v2alpha/event_annotations.proto";
 
 option java_package = "event_templates";
 option java_multiple_files = true;
 
-message Event {
-  BaseDemographicsTemplate base_demographics = 1;
-  PlatformTemplate platform = 2;
-  GeoTemplate geo = 3;
+message PlatformTemplate {
+  option (.wfa.measurement.api.v2alpha.event_template) = {
+    name: "base_demographics_template"
+    display_name: "Base Demographics"
+    description: "An Event Template that specifies age range and gender."
+  };
+
+
+  // Platform on which an impression was viewed by a virtual person.
+  enum Platform {
+    // Not set intentionally
+    PLATFORM_UNKNOWN = 0;
+    PLATFORM_DESKTOP = 1;
+    PLATFORM_MOBILE = 2;
+    PLATFORM_TABLET = 3;
+    PLATFORM_CASTED_TV = 4;
+  }
+  // The platform on which the ad was viewed.
+  Platform platform = 6;
 }

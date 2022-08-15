@@ -1,4 +1,4 @@
-// Copyright 2022 The Cross-Media Measurement Authors
+// Copyright 2021 The Cross-Media Measurement Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,16 +16,18 @@ syntax = "proto3";
 
 package event_templates;
 
-import "event_templates/base_demographics_template.proto";
-import "event_templates/platform_template.proto";
-import "event_templates/geo_template.proto";
-
+import "wfa/measurement/api/v2alpha/event_annotations.proto";
 
 option java_package = "event_templates";
 option java_multiple_files = true;
 
-message Event {
-  BaseDemographicsTemplate base_demographics = 1;
-  PlatformTemplate platform = 2;
-  GeoTemplate geo = 3;
+message GeoTemplate {
+  option (.wfa.measurement.api.v2alpha.event_template) = {
+    name: "geo_template"
+    display_name: "Geo"
+    description: "An Event Template that specifies geo location."
+  };
+
+  // Zip code where the ad was viewed.
+  int32 zip_code = 1;
 }
