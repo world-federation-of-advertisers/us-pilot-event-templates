@@ -29,5 +29,5 @@ message GeoTemplate {
   };
 
   // Zip code where the ad was viewed.
-  int32 zip_code = 1;
+  string zip_code = 1;
 }
