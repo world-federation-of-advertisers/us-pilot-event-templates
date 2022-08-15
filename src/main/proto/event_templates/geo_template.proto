@@ -28,6 +28,15 @@ message GeoTemplate {
     description: "An Event Template that specifies geo location."
   };
 
-  // Zip code where the ad was viewed.
-  string zip_code = 1;
+  message Location {
+    option (.wfa.measurement.api.v2alpha.event_field) = {
+      display_name: "Location"
+    };
+
+    // location id of where the ad was viewed. The content could be anything
+    // that the MC-EDP pair has agreed on.
+    string location_id = 1;
+  }
+
+  Location location = 1;
 }

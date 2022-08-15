@@ -28,16 +28,22 @@ message PlatformTemplate {
     description: "An Event Template that specifies age range and gender."
   };
 
+  message Platform {
+    option (.wfa.measurement.api.v2alpha.event_field) = {
+      display_name: "Platform"
+    };
 
-  // Platform on which an impression was viewed by a virtual person.
-  enum Platform {
-    // Not set intentionally
-    PLATFORM_UNKNOWN = 0;
-    PLATFORM_DESKTOP = 1;
-    PLATFORM_MOBILE = 2;
-    PLATFORM_TABLET = 3;
-    PLATFORM_CASTED_TV = 4;
+    // Platform on which an impression was viewed by a virtual person.
+    enum Value {
+      // Not set intentionally
+      PLATFORM_UNKNOWN = 0;
+      PLATFORM_DESKTOP = 1;
+      PLATFORM_MOBILE = 2;
+      PLATFORM_TABLET = 3;
+      PLATFORM_CASTED_TV = 4;
+    }
+    Value value = 1;
   }
-  // The platform on which the ad was viewed.
-  Platform platform = 6;
+
+  Platform platform = 1;
 }
