@@ -14,29 +14,36 @@
 
 syntax = "proto3";
 
-package event_templates;
+package eventtemplates;
 
 import "wfa/measurement/api/v2alpha/event_annotations.proto";
 
-option java_package = "event_templates";
+option java_package = "eventtemplates";
 option java_multiple_files = true;
 
-message GeoTemplate {
+message PlatformTemplate {
   option (.wfa.measurement.api.v2alpha.event_template) = {
-    name: "geo_template"
-    display_name: "Geo"
-    description: "An Event Template that specifies geo location."
+    name: "platform_template"
+    display_name: "Platform"
+    description: "An Event Template that specifies platform."
   };
 
-  message Location {
+  message Platform {
     option (.wfa.measurement.api.v2alpha.event_field) = {
-      display_name: "Location"
+      display_name: "Platform"
     };
 
-    // location id of where the ad was viewed. The content could be anything
-    // that the MC-EDP pair has agreed on.
-    string location_id = 1;
+    // Platform on which an impression was viewed by a virtual person.
+    enum Value {
+      // Not set intentionally
+      PLATFORM_UNKNOWN = 0;
+      PLATFORM_DESKTOP = 1;
+      PLATFORM_MOBILE = 2;
+      PLATFORM_TABLET = 3;
+      PLATFORM_CASTED_TV = 4;
+    }
+    Value value = 1;
   }
 
-  Location location = 1;
+  Platform platform = 1;
 }

@@ -14,13 +14,13 @@
 
 syntax = "proto3";
 
-package event_templates;
+package eventtemplates;
 
 import "event_templates/base_demographics_template.proto";
 import "event_templates/platform_template.proto";
 import "event_templates/geo_template.proto";
 
-option java_package = "event_templates";
+option java_package = "eventtemplates";
 option java_multiple_files = true;
 
 message Event {
