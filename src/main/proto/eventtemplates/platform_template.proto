@@ -40,7 +40,7 @@ message PlatformTemplate {
       PLATFORM_DESKTOP = 1;
       PLATFORM_MOBILE = 2;
       PLATFORM_TABLET = 3;
-      PLATFORM_CASTED_TV = 4;
+      PLATFORM_TV = 4;
     }
     Value value = 1;
   }
