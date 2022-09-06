@@ -49,7 +49,6 @@ message PlatformTemplate {
       PLATFORM_MOBILE_BROWSER = 6;
       PLATFORM_TABLET = 7;
       PLATFORM_TV = 8;
-
     }
     Value value = 1;
   }
