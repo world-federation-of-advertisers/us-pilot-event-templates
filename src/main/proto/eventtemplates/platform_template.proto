@@ -39,8 +39,16 @@ message PlatformTemplate {
       PLATFORM_UNKNOWN = 0;
       PLATFORM_DESKTOP = 1;
       PLATFORM_MOBILE = 2;
-      PLATFORM_TABLET = 3;
-      PLATFORM_TV = 4;
+      // Not all EDPs support this enum
+      PLATFORM_DESKTOP_APP = 3;
+      // Not all EDPs support this enum
+      PLATFORM_DESKTOP_BROWSER = 4;
+      // Not all EDPs support this enum
+      PLATFORM_MOBILE_APP = 5;
+      // Not all EDPs support this enum
+      PLATFORM_MOBILE_BROWSER = 6;
+      PLATFORM_TABLET = 7;
+      PLATFORM_TV = 8;
     }
     Value value = 1;
   }
